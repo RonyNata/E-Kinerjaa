@@ -1,0 +1,72 @@
+<section style="width: 90%;padding-left: 10%;padding-top: 50px; ">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>PENGUMPULAN DATA BEBAN KERJA</h2>
+                    </div>
+                    <div class="body">
+                        <div class="row clearfix">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <div class="col-md-12" >
+                            <div>
+                                Tanggal: 
+                            </div>
+                            <!-- min="{{aktivitas.now}}" -->
+                                <div class="col-md-3">
+                                    <input type="date" class="form-control" ng-model="aktivitas.tanggal" >
+                                </div>
+                            </div>
+                            <div class="col-md-12" >
+                                NIP : {{aktivitas.pegawai.nipPegawai}}
+                            </div>
+                            <div class="col-md-12" >
+                                Nama : {{aktivitas.pegawai.namaPegawai}}
+                            </div>
+                            <div class="col-md-12" >
+                                Jabatan : {{aktivitas.pegawai.jabatan}}
+                            </div>
+                            <div class="col-md-12" >
+                                Unit : {{aktivitas.pegawai.unit}}
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-10"></div>    
+                                <div class="col-md-2">
+                                    <button class="btn btn-primary" ng-click="aktivitas.open()">Tambahkan Aktivitas</button>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div style="padding-bottom: 10px"></div>
+                        <table id="bebanKerja" class="table table-bordered table-striped table-hover js-basic-example dataTable" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th style="width: 5%; text-align: center">No</th>
+                                    <th style="text-align: center">Aktivitas</th>
+                                    <th style="width: 10%; text-align: center">Status</th>
+                                    <th style="width: 5%; text-align: center">Capaian (menit)</th>
+                                    <!-- <th width="14%" style="width: 10%; text-align: center">Action</th> -->
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="rincian in aktivitas.rincian">
+                                    <td>{{$index + 1}}</td>
+                                    <td>{{rincian.namaUrtug}}</td>
+                                    <td>{{rincian.status}}</td>
+                                    <td>{{rincian.capaianMenit}}</td>
+                                    <!-- <td>
+                                        <button type="button" class="btn btn-warning waves-effect btn-circle waves-circle" data-toggle="modal" data-target="#tModal"><i class="material-icons">edit</i></button>
+                                        <button type="button" class="btn btn-danger waves-effect btn-circle waves-circle"><i class="material-icons">delete_forever</i></button>
+                                    </td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="assets/js/dataTableActive.js"></script>
+<script src="assets/js/jquery-1.12.4.js"></script>
